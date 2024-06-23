@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+}
+
+.stars-container {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    /* background: linear-gradient(to bottom, #35028df0, #17004a); */
+    background: linear-gradient(3deg, rgba(25, 23, 80, 1) 0%, rgba(62, 41, 149, 1) 100%);
+    overflow: hidden;
+}
+
+.navbar {
+    /* position:relative; */
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    height: 90px;
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    /* Ensure navbar stays above stars */
+}
+
+.logo img {
+    /* height: 10px; Adjust height as needed */
+    padding-top: 20px;
+    padding-left: 15rem;
+}
+
+.nav-links {
+    display: flex;
+    margin-right: 20rem;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 50px;
+}
+
+.hamburger {
+    display: none;
+    /* Initially hide hamburger button */
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        /* Hide nav links on smaller screens */
+    }
+
+    .hamburger {
+        display: block;
+        /* Display hamburger button */
+    }
+
+    .content {
+        margin-top: 40px;
+        /* Adjust spacing for content */
+    }
+}
+
+
+.stars-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    /* Ensure stars are behind other content */
+}
+
+.star {
+    position: absolute;
+    background: white;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    animation: moveUp linear infinite;
+    animation-duration: 5s;
+    /* Adjust the animation duration (increase for slower movement) */
+}
+
+/* Animation to move stars upwards */
+@keyframes moveUp {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-5vh);
+        /* Adjust the distance the stars travel (Decrease for slower movement) */
+    }
+}
+
+.hero-content {
+    padding-top: 20px;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: 45px;
+}
+
+.hero-content p {
+    font-size: 27px;
+}
+
+.hero-content button {
+    min-width: 15em;
+    height: 50px;
+    margin: 24px 16px;
+    padding: 0 32px;
+    border: none;
+    border-radius: 12.5rem;
+    color: #6a49f2;
+    font-weight: 500;
+    font-family: inherit;
+    display: inline-block;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.hero-content button:hover {
+    background-color: #6a49f2;
+    color: white;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.507);
+}
+
+.hero-img {
+    position: relative;
+    height: 30rem;
+    bottom: -9px;
+}
+
+.hero-img img {
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* Basic styling for the container */
+.box-container {
+    max-width: 75%;
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Styling for each box */
+.box {
+    max-width: 30%;
+    /* Default width for desktop (3 boxes per row) */
+    margin: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all ease 1s;
+    /* box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.282); */
+}
+
+.box p {
+    margin: 20px 0;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.box img {
+    max-width: 100%;
+    scale: 1;
+    border: none;
+    border-radius: 10px;
+    transition: all ease 0.5s;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.441);
+}
+
+.box-img:hover {
+    scale: 1.1;
+    /* overflow: hidden; */
+}
+
+/* Media query for tablets (2 boxes per row) */
+@media (max-width: 1024px) {
+    .box {
+        width: 45%;
+        /* Adjust width for tablets (2 boxes per row) */
+    }
+}
+
+/* Media query for mobile devices (1 box per row) */
+@media (max-width: 600px) {
+    .box {
+        width: 90%;
+        /* Adjust width for mobile (1 box per row) */
+    }
+}
+
+/* Footer */
+footer {
+    padding: 100px 0 100px 0;
+    display: block;
+    width: 100%;
+    clear: both;
+    text-align: center;
+    background: #18174f;
+    color: white;
+}
+
+.footer-heading {
+    font-size: 2.75rem;
+    line-height: 4.125rem;
+    font-weight: 300;
+    margin-top: 0;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.footer hr {
+    width: 40px;
+    height: 4px;
+    text-align: center;
+    margin: auto;
+    border: none;
+    color: white;
+    background-color: white;
+}
+
+.footer button {
+    min-width: 12em;
+    height: 60px;
+    margin: 34px 0px 10px 0;
+    padding: 0 10px;
+    border: none;
+    border-radius: 12.5rem;
+    color: rgba(35, 35, 35, 0.821);
+    font-family: inherit;
+    font-size: 18px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    transition: all ease 0.5s;
+}
+
+.footer button:hover {
+    background-color: #6a49f2;
+    color: white;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.507);
+}
+.footer-p {
+    color: #708198;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.footer-p a {
+    text-decoration: none;
+    color: #2b8dd9;
+    letter-spacing: 0.2px;
+}
